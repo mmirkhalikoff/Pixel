@@ -4,6 +4,7 @@ import {colors} from '../../theme/colors/colors';
 import {windowWidth} from '../../constants/ScreenSize/size';
 import SearchIcon from '../../assets/icons/general/SearchIcon/SearchIcon';
 import CustomCategory from '../../components/CustomCategory';
+import Header from '../../components/Header';
 
 const SearchScreen = () => {
   const [search, setSearch] = useState('');
@@ -20,6 +21,7 @@ const SearchScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Header />
       <View
         style={[
           styles.inputView,
