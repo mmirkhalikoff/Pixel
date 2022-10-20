@@ -13,7 +13,6 @@ import {colors} from '../../theme/colors/colors';
 import {windowWidth} from '../../constants/ScreenSize/size';
 import {useNavigation} from '@react-navigation/native';
 import {routes} from '../../routes/routes';
-import VirtualizedScrollList from '../../components/VirtualizedScrollList';
 // import Video from 'react-native-video';
 
 const HomeScreen = () => {
@@ -90,7 +89,6 @@ const HomeScreen = () => {
           backgroundColor: colors.bgApp,
         },
       ]}>
-      <VirtualizedScrollList />
       {/* <TouchableOpacity
       // onPress={() => {
       //   //@ts-ignore
