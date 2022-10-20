@@ -9,7 +9,8 @@ import {
 import React, {useEffect, useState} from 'react';
 import {colors} from '../../theme/colors/colors';
 import {windowWidth} from '../../constants/ScreenSize/size';
-import Skeleton from '../Skeleton';
+import {createShimmerPlaceholder} from 'react-native-shimmer-placeholder';
+import LinearGradient from 'react-native-linear-gradient';
 
 const data = [
   {
@@ -90,52 +91,40 @@ const data = [
 ];
 
 const CustomCategory = () => {
-  const [loading, setLoading] = useState(true);
+  const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
+
+  const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
+    setInterval(() => {
+      setAnimating(true);
     }, 500);
-  }, [loading]);
+  }, []);
 
   return (
     <View style={styles.container}>
-      {loading ? (
-        <View style={{marginTop: 30}}>
-          <View style={styles.skeletonBox}>
-            <Skeleton style={styles.skeleton} width="44%" height={100} />
-            <Skeleton style={styles.skeleton} width="44%" height={100} />
-          </View>
-          <View style={styles.skeletonBox}>
-            <Skeleton style={styles.skeleton} width="44%" height={100} />
-            <Skeleton style={styles.skeleton} width="44%" height={100} />
-          </View>
-          <View style={styles.skeletonBox}>
-            <Skeleton style={styles.skeleton} width="44%" height={100} />
-            <Skeleton style={styles.skeleton} width="44%" height={100} />
-          </View>
-          <View style={styles.skeletonBox}>
-            <Skeleton style={styles.skeleton} width="44%" height={100} />
-            <Skeleton style={styles.skeleton} width="44%" height={100} />
-          </View>
-        </View>
-      ) : (
-        <FlatList
-          numColumns={2}
-          data={data}
-          contentContainerStyle={styles.flatList}
-          renderItem={({item}) => (
-            <TouchableOpacity key={item.id} style={styles.flatListView}>
+      <FlatList
+        numColumns={2}
+        data={data}
+        contentContainerStyle={styles.flatList}
+        showsVerticalScrollIndicator={false}
+        renderItem={({item}) => (
+          <ShimmerPlaceholder
+            visible={animating}
+            key={item.id}
+            shimmerColors={['#7E7E7E', '#555555', '#696969']}
+            style={styles.flatListView}>
+            <TouchableOpacity>
               <ImageBackground
                 source={item.img}
                 style={styles.image}
-                imageStyle={{opacity: 0.5}}>
+                imageStyle={{opacity: 0.7}}>
                 <Text style={styles.title}>{item.title}</Text>
               </ImageBackground>
             </TouchableOpacity>
-          )}
-        />
-      )}
+          </ShimmerPlaceholder>
+        )}
+      />
     </View>
   );
 };
@@ -158,16 +147,17 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   flatList: {
-    marginTop: 30,
     paddingRight: 2,
     paddingBottom: 100,
     width: windowWidth - 20,
   },
   flatListView: {
-    margin: 10,
+    margin: 8,
     height: 100,
     width: '45%',
-    borderRadius: 6,
+    borderRadius: 4,
+    borderColor: colors.white,
+    borderWidth: 0.1,
   },
   image: {
     width: '100%',

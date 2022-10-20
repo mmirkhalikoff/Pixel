@@ -1,10 +1,12 @@
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {colors} from '../../theme/colors/colors';
-import {windowWidth} from '../../constants/ScreenSize/size';
-import Skeleton from '../Skeleton';
+import LinearGradient from 'react-native-linear-gradient';
+import {createShimmerPlaceholder} from 'react-native-shimmer-placeholder';
 
 const VirtualizedScrollList = () => {
+  const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
+
   const DATA = [
     {
       id: 1,
@@ -72,48 +74,31 @@ const VirtualizedScrollList = () => {
     },
   ];
 
-  const [loading, setLoading] = useState(true);
+  const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false);
+      setAnimating(true);
     }, 2000);
-  }, [loading]);
+  }, []);
 
   return (
     <View>
-      {loading ? (
-        <View style={{marginTop: 10}}>
-          <View style={styles.skeletonBox}>
-            <Skeleton width="49%" height={200} />
-            <Skeleton width="49%" height={200} />
-          </View>
-          <View style={styles.skeletonBox}>
-            <Skeleton width="49%" height={200} />
-            <Skeleton width="49%" height={200} />
-          </View>
-          <View style={styles.skeletonBox}>
-            <Skeleton width="49%" height={200} />
-            <Skeleton width="49%" height={200} />
-          </View>
-          <View style={styles.skeletonBox}>
-            <Skeleton width="49%" height={200} />
-            <Skeleton width="49%" height={200} />
-          </View>
-        </View>
-      ) : (
-        <FlatList
-          numColumns={2}
-          data={DATA}
-          showsVerticalScrollIndicator={false}
-          renderItem={({item}) => (
-            <View style={styles.box} key={item.id}>
-              <Text>{item.title}</Text>
-            </View>
-          )}
-          contentContainerStyle={styles.flatStyle}
-        />
-      )}
+      <FlatList
+        numColumns={2}
+        data={DATA}
+        showsVerticalScrollIndicator={false}
+        renderItem={({item}) => (
+          <ShimmerPlaceholder
+            visible={animating}
+            key={item.id}
+            shimmerColors={['#7E7E7E', '#555555', '#696969']}
+            style={styles.box}>
+            <Text style={{color: 'white'}}>{item.title}</Text>
+          </ShimmerPlaceholder>
+        )}
+        contentContainerStyle={styles.flatStyle}
+      />
     </View>
   );
 };
@@ -143,20 +128,5 @@ const styles = StyleSheet.create({
     margin: 1,
     borderRadius: 2,
     backgroundColor: colors.imperialPrimer,
-  },
-  emptyContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  emptyCard: {
-    width: windowWidth / 2 - 30,
-    height: 250,
-    shadowOpacity: 0.2,
-    borderRadius: 7.5,
-    elevation: 2,
-    marginLeft: 18,
-    marginBottom: 10,
-    // marginHorizontal: 3,
-    backgroundColor: colors.white,
   },
 });
