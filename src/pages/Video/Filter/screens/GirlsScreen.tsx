@@ -1,11 +1,12 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {colors} from '../../../../theme/colors/colors';
+import FlatListScreen from '../../../../components/FlatList';
 
 const GirlScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={{color: 'white'}}>GirlScreen</Text>
+      <FlatListScreen />
     </View>
   );
 };
