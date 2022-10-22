@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "950185263438",
+    "project_id": "pixel-e8feb",
+    "storage_bucket": "pixel-e8feb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950185263438:android:763fdda54c18b0824ede1f",
+        "android_client_info": {
+          "package_name": "com.pixel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950185263438-v2fc3br7qoad3tf2hl0gmlu3m28f3aue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXQc68d5bT0SY2SsIFQxjJgqrRB4uLewM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950185263438-v2fc3br7qoad3tf2hl0gmlu3m28f3aue.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "950185263438-l0b6o5ktuto6sfmo2lh2422079u3jfcd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pixel.karimov"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

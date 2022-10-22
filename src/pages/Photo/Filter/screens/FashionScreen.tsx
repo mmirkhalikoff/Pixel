@@ -1,16 +1,17 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {colors} from '../../../../theme/colors/colors';
+import FlatListScreen from '../../../../components/FlatList';
 
-const HistoryScreen = () => {
+const FashionScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={{color: 'white'}}>HistoryScreen</Text>
+      <FlatListScreen />
     </View>
   );
 };
 
-export default HistoryScreen;
+export default FashionScreen;
 
 const styles = StyleSheet.create({
   container: {

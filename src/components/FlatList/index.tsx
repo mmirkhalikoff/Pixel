@@ -4,7 +4,7 @@ import {colors} from '../../theme/colors/colors';
 import LinearGradient from 'react-native-linear-gradient';
 import {createShimmerPlaceholder} from 'react-native-shimmer-placeholder';
 
-const VirtualizedScrollList = () => {
+const FlatListScreen = () => {
   const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
 
   const DATA = [
@@ -103,7 +103,7 @@ const VirtualizedScrollList = () => {
   );
 };
 
-export default VirtualizedScrollList;
+export default FlatListScreen;
 
 const styles = StyleSheet.create({
   skeletonBox: {
@@ -127,6 +127,9 @@ const styles = StyleSheet.create({
     width: '49%',
     margin: 1,
     borderRadius: 2,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: colors.imperialPrimer,
   },
 });

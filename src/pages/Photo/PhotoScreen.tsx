@@ -15,7 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 import {routes} from '../../routes/routes';
 // import Video from 'react-native-video';
 
-const HomeScreen = () => {
+const PhotoScreen = () => {
   let navigation = useNavigation();
 
   const [photo, setPhoto] = useState();
@@ -159,7 +159,7 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default PhotoScreen;
 
 const styles = StyleSheet.create({
   container: {

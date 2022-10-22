@@ -1,16 +1,17 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {colors} from '../../../../theme/colors/colors';
+import FlatListScreen from '../../../../components/FlatList';
 
-const UzbekistanScreen = () => {
+const BusinessScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={{color: 'white'}}>UzbekistanScreen</Text>
+      <FlatListScreen />
     </View>
   );
 };
 
-export default UzbekistanScreen;
+export default BusinessScreen;
 
 const styles = StyleSheet.create({
   container: {

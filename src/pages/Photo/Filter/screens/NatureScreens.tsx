@@ -1,16 +1,17 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {colors} from '../../../../theme/colors/colors';
+import FlatListScreen from '../../../../components/FlatList';
 
-const FoodDrinkScreen = () => {
+const NatureScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={{color: 'white'}}>FoodDrinkScreen</Text>
+      <FlatListScreen />
     </View>
   );
 };
 
-export default FoodDrinkScreen;
+export default NatureScreen;
 
 const styles = StyleSheet.create({
   container: {

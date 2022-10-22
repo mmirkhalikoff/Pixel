@@ -1,7 +1,7 @@
 export const routes = {
   APP_PATH: 'APP_PATH',
 
-  HOME_PATH: 'HOME',
+  PHOTO: 'PHOTO',
   BOTTOM_PATH: 'BOTTOM',
   VIDEO: 'VIDEO',
   SEARCH: 'SEARCH',

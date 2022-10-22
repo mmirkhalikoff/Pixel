@@ -1,9 +1,9 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
-import {colors} from '../../theme/colors/colors';
-import FlatListScreen from '../../components/FlatList';
+import {colors} from '../../../../theme/colors/colors';
+import FlatListScreen from '../../../../components/FlatList';
 
-const VideoScreen = () => {
+const ArtScreen = () => {
   return (
     <View style={styles.container}>
       <FlatListScreen />
@@ -11,7 +11,7 @@ const VideoScreen = () => {
   );
 };
 
-export default VideoScreen;
+export default ArtScreen;
 
 const styles = StyleSheet.create({
   container: {
