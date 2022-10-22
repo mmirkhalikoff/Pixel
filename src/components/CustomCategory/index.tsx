@@ -107,7 +107,7 @@ const CustomCategory = () => {
             key={item.id}
             shimmerColors={shimmerColors}
             style={styles.flatListView}>
-            <TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.7}>
               <ImageBackground
                 source={item.img}
                 style={styles.image}
