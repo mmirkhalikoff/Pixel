@@ -10,9 +10,9 @@ import SearchScreen from '../../pages/Search/SearchScreen';
 import Filter from '../../pages/Photo/Filter/FilterScreen';
 import VideoFilter from '../../pages/Video/Filter/VideoFilterScreen';
 
-const Tab = createBottomTabNavigator();
-
 const BottomNavigation = () => {
+  const Tab = createBottomTabNavigator();
+
   return (
     <Tab.Navigator
       screenOptions={{

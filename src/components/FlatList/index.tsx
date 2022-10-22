@@ -1,6 +1,6 @@
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {colors} from '../../theme/colors/colors';
+import {colors, shimmerColors} from '../../theme/colors/colors';
 import LinearGradient from 'react-native-linear-gradient';
 import {createShimmerPlaceholder} from 'react-native-shimmer-placeholder';
 
@@ -76,11 +76,9 @@ const FlatListScreen = () => {
 
   const [animating, setAnimating] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setAnimating(true);
-    }, 2000);
-  }, []);
+  setTimeout(() => {
+    setAnimating(true);
+  }, 1000);
 
   return (
     <View>
@@ -92,7 +90,7 @@ const FlatListScreen = () => {
           <ShimmerPlaceholder
             visible={animating}
             key={item.id}
-            shimmerColors={['#7E7E7E', '#555555', '#696969']}
+            shimmerColors={shimmerColors}
             style={styles.box}>
             <Text style={{color: 'white'}}>{item.title}</Text>
           </ShimmerPlaceholder>
@@ -120,7 +118,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-around',
     marginTop: 10,
-    paddingBottom: 100,
+    paddingBottom: 70,
   },
   box: {
     height: 200,

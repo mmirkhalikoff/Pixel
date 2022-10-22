@@ -69,12 +69,11 @@ const Filter = () => {
           component={IslamicScreen}
           options={{tabBarLabel: 'Islamic'}}
         />
-
-        <Tab.Screen
+        {/* <Tab.Screen
           name={routes.UZBEKISTAN}
           component={UzbekistanScreen}
           options={{tabBarLabel: 'Uzbekistan'}}
-        />
+        /> */}
         <Tab.Screen
           name={routes.CURRENT_EVENT}
           component={CurrentEventsScreens}

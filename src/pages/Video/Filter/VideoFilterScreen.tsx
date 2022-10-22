@@ -40,7 +40,7 @@ const VideoFilter = () => {
         <Tab.Screen
           name={routes.VIDEO}
           component={VideoScreen}
-          options={{tabBarLabel: 'All'}}
+          options={{tabBarLabel: 'Popular'}}
         />
         <Tab.Screen
           name={routes.VIDEO_TECHNOLOGY}
@@ -55,12 +55,12 @@ const VideoFilter = () => {
         <Tab.Screen
           name={routes.VIDEO_GIRL}
           component={GirlScreen}
-          options={{tabBarLabel: 'Girl'}}
+          options={{tabBarLabel: 'Girls'}}
         />
         <Tab.Screen
           name={routes.VIDEO_CARS}
           component={CarsScreen}
-          options={{tabBarLabel: 'Car'}}
+          options={{tabBarLabel: 'Cars'}}
         />
       </Tab.Navigator>
     </View>
