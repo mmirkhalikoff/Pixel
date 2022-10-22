@@ -27,56 +27,56 @@ const PhotoScreen = () => {
     '563492ad6f917000010000015494bcde8dcc43e68f1a9a1dc5b8d574';
 
   // Load Photo //
-  let loadPhoto = async () => {
-    // https://api.pexels.com/v1/curated //  load default photo api
-    // https://api.pexels.com/v1/curated?page=2&per_page=50 // load photo in 2 page total photo 50 // max content in one page total 80
-    const data = await fetch(
-      `https://api.pexels.com/v1/curated?page=2&per_page=80`,
-      {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          Authorization: PIXELS_API_KEY,
-        },
-      },
-    );
+  // let loadPhoto = async () => {
+  //   // https://api.pexels.com/v1/curated //  load default photo api
+  //   // https://api.pexels.com/v1/curated?page=2&per_page=50 // load photo in 2 page total photo 50 // max content in one page total 80
+  //   const data = await fetch(
+  //     `https://api.pexels.com/v1/curated?page=2&per_page=80`,
+  //     {
+  //       method: 'GET',
+  //       headers: {
+  //         Accept: 'application/json',
+  //         Authorization: PIXELS_API_KEY,
+  //       },
+  //     },
+  //   );
 
-    // const dataTwo = await fetch(
-    //   `https://api.pexels.com/v1/curated?page=3&per_page=80`,
-    //   {
-    //     method: 'GET',
-    //     headers: {
-    //       Accept: 'application/json',
-    //       Authorization: PIXELS_API_KEY,
-    //     },
-    //   },
-    // );
+  //   // const dataTwo = await fetch(
+  //   //   `https://api.pexels.com/v1/curated?page=3&per_page=80`,
+  //   //   {
+  //   //     method: 'GET',
+  //   //     headers: {
+  //   //       Accept: 'application/json',
+  //   //       Authorization: PIXELS_API_KEY,
+  //   //     },
+  //   //   },
+  //   // );
 
-    const response = await data.json();
-    // const responseTwo = await dataTwo.json();
-    setPhoto(response);
-    // setPhotoTwo(responseTwo);
-    // console.log(response);
-  };
+  //   const response = await data.json();
+  //   // const responseTwo = await dataTwo.json();
+  //   setPhoto(response);
+  //   // setPhotoTwo(responseTwo);
+  //   // console.log(response);
+  // };
 
-  let loadVideo = async () => {
-    const data = await fetch(`https://api.pexels.com/videos/popular`, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        Authorization: PIXELS_API_KEY,
-      },
-    });
+  // let loadVideo = async () => {
+  //   const data = await fetch(`https://api.pexels.com/videos/popular`, {
+  //     method: 'GET',
+  //     headers: {
+  //       Accept: 'application/json',
+  //       Authorization: PIXELS_API_KEY,
+  //     },
+  //   });
 
-    const response = await data.json();
-    setVideo(response);
-    // console.log(response);
-  };
+  //   const response = await data.json();
+  //   setVideo(response);
+  //   // console.log(response);
+  // };
 
-  useEffect(() => {
-    loadPhoto();
-    loadVideo();
-  }, []);
+  // useEffect(() => {
+  //   loadPhoto();
+  //   loadVideo();
+  // }, []);
 
   // console.log(videoState);
   // console.log(photo);
