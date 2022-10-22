@@ -1,12 +1,12 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {colors} from '../../theme/colors/colors';
-import VirtualizedScrollList from '../../components/VirtualizedScrollList';
+import FlatListScreen from '../../components/FlatList';
 
 const VideoScreen = () => {
   return (
     <View style={styles.container}>
-      <VirtualizedScrollList />
+      <FlatListScreen />
     </View>
   );
 };

@@ -26,3 +26,5 @@ export const colors = {
   imperialPrimer: '#233242',
   bgApp: '#202020',
 };
+
+export const shimmerColors = ['#202020', '#414040', '#202020'];

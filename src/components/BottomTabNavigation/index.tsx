@@ -7,12 +7,12 @@ import GalleryIcon from '../../assets/icons/general/GalleryIcon/GalleryIcon';
 import VideoIcon from '../../assets/icons/general/VideoIcon/VideoIcon';
 import SearchIcon from '../../assets/icons/general/SearchIcon/SearchIcon';
 import SearchScreen from '../../pages/Search/SearchScreen';
-import Filter from '../../pages/Home/Filter/FilterScreen';
+import Filter from '../../pages/Photo/Filter/FilterScreen';
 import VideoFilter from '../../pages/Video/Filter/VideoFilterScreen';
 
-const Tab = createBottomTabNavigator();
-
 const BottomNavigation = () => {
+  const Tab = createBottomTabNavigator();
+
   return (
     <Tab.Navigator
       screenOptions={{
