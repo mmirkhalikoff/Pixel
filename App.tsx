@@ -8,11 +8,12 @@
  * @format
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 import AppRouter from './src';
 import {colors} from './src/theme/colors/colors';
 import {LogBox} from 'react-native';
+import RNBootSplash from 'react-native-bootsplash';
 
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
@@ -20,6 +21,10 @@ LogBox.ignoreLogs([
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
+
+  useEffect(() => {
+    RNBootSplash.hide({fade: true});
+  }, []);
 
   const modeStyle = {
     backgroundColor: colors.bgApp,
